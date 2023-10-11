@@ -6,5 +6,5 @@ export const IndexRouter = express.Router();
 
 /** GET home page. */
 IndexRouter.get("/", (req, res, next) => {
-  res.render("index", { isDev, title: "Express" });
+  res.render("index", { isDev });
 });
