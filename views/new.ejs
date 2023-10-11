@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="text-[14px]">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,7 +10,23 @@
 
     <% if (isDev) { %> <% include ./components/reloader.ejs %> <% } %>
   </head>
-  <body>
-    <h1>Post New Message</h1>
+  <body class="grid gap-8 p-16">
+    <h1 class="text-4xl font-bold">Post New Message</h1>
+
+    <form method="POST" action="/new" class="grid justify-items-start gap-3">
+      <label
+        class="grid grid-cols-[6rem_auto] gap-3 justify-items-start items-center"
+      >
+        Name
+        <input type="text" name="user" class="px-2 py-1 bg-zinc-200" />
+      </label>
+      <label
+        class="grid grid-cols-[6rem_auto] gap-3 justify-items-start items-center"
+      >
+        <span>Message <span class="text-red-500">*</span></span>
+        <input type="text" name="text" class="px-2 py-1 bg-zinc-200" required />
+      </label>
+      <button type="submit" class="px-3 py-2 bg-blue-300">Post Message</button>
+    </form>
   </body>
 </html>

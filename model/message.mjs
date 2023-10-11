@@ -19,6 +19,12 @@ const messages = [
   },
 ];
 
+/** Create */
+export function postMessage(/** @type {Message} */ message) {
+  messages.push(message);
+}
+
+/** Read */
 export function retrieveMessages() {
   return [...messages];
 }
