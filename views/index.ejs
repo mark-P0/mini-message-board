@@ -11,9 +11,11 @@
     <% if (isDev) { %> <% include ./components/reloader.ejs %> <% } %>
   </head>
   <body class="grid gap-8 p-16">
-    <header class="grid justify-items-start">
-      <h1 class="text-4xl font-bold">Mini Message Board</h1>
-      <p>Welcome!</p>
+    <header class="grid justify-items-start gap-4">
+      <div>
+        <h1 class="text-4xl font-bold">Mini Message Board</h1>
+        <p>Welcome!</p>
+      </div>
       <a href="/new" class="px-3 py-2 bg-blue-300">Post New Message</a>
     </header>
 
@@ -22,7 +24,7 @@
 
       <li class="flex gap-3 items-start">
         <header class="flex gap-2 items-center">
-          <div class="w-max text-zinc-400 text-sm select-none">
+          <div class="w-max text-zinc-400 text-xs font-mono select-none">
             <%= added %>
           </div>
           <h4 class="flex gap-1">
