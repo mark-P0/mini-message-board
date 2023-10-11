@@ -5,6 +5,7 @@ import logger from "morgan";
 import path from "path";
 import url from "url";
 import { IndexRouter } from "./routes/index.mjs";
+import { NewMessageRouter } from "./routes/new.mjs";
 
 /** https://stackoverflow.com/a/50052194 */
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
@@ -22,6 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", IndexRouter);
+app.use("/new", NewMessageRouter);
 
 /** Catch 404 and forward to error handler */
 app.use((req, res, next) => {
