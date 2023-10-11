@@ -1,7 +1,7 @@
 /**
  * @typedef {Object} Message
  * @property {string} text
- * @property {string} user
+ * @property {string | null} user
  * @property {Date} added
  */
 

@@ -26,9 +26,11 @@
             <%= added %>
           </div>
           <h4 class="flex gap-1">
+            <% if (user === null) { %>
+            <div class="italic text-zinc-500">Anonymous</div>
+            <% } else { %>
             <div class="font-bold"><%= user %></div>
-
-            <%# Separate div to not be selectable %>
+            <% } %> <%# Separate div to not be selectable %>
             <div>:</div>
           </h4>
         </header>
