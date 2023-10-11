@@ -10,8 +10,31 @@
 
     <% if (isDev) { %> <% include ./components/reloader.ejs %> <% } %>
   </head>
-  <body class="p-16">
-    <h1 class="text-4xl font-bold">Mini Message Board</h1>
-    <p>Welcome!</p>
+  <body class="grid gap-8 p-16">
+    <header>
+      <h1 class="text-4xl font-bold">Mini Message Board</h1>
+      <p>Welcome!</p>
+    </header>
+
+    <ol>
+      <% messages.forEach(({text, user, added}) => { %>
+
+      <li class="flex gap-3 items-start">
+        <header class="flex gap-2 items-center">
+          <div class="w-max text-zinc-400 text-sm select-none">
+            <%= added %>
+          </div>
+          <h4 class="flex gap-1">
+            <div class="font-bold"><%= user %></div>
+
+            <%# Separate div to not be selectable %>
+            <div>:</div>
+          </h4>
+        </header>
+        <p><%= text %></p>
+      </li>
+
+      <% }) %>
+    </ol>
   </body>
 </html>
