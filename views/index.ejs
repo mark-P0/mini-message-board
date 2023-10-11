@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="text-[14px]">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Mini Message Board</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <% if (isDev) { %> <% include ./components/reloader.ejs %> <% } %>
   </head>
-  <body>
-    <h1>Mini Message Board</h1>
+  <body class="p-16">
+    <h1 class="text-4xl font-bold">Mini Message Board</h1>
     <p>Welcome!</p>
   </body>
 </html>
