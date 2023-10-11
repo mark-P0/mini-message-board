@@ -5,11 +5,11 @@ const isDev = process.env["NODE_ENV"] === "DEVELOPMENT";
 
 export const NewMessageRouter = Router();
 
-NewMessageRouter.get("/", (req, res, next) => {
+NewMessageRouter.get("/new", (req, res, next) => {
   res.render("new", { isDev });
 });
 
-NewMessageRouter.post("/", (req, res, next) => {
+NewMessageRouter.post("/new", (req, res, next) => {
   try {
     let { user, text } = req.body;
     const added = new Date();
