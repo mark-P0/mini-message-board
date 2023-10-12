@@ -14,13 +14,11 @@ function formatDate(/** @type {Date} */ date) {
 export const IndexRouter = express.Router();
 
 /** GET home page. */
-IndexRouter.get("/", (req, res, next) => {
-  const messages = retrieveMessages()
-    .reverse()
-    .map((message) => ({
-      ...message,
-      added: formatDate(message.added),
-    }));
+IndexRouter.get("/", async (req, res, next) => {
+  const messages = (await retrieveMessages()).reverse().map((message) => ({
+    ...message,
+    added: formatDate(message.added),
+  }));
 
   res.render("index", { isDev, messages });
 });
